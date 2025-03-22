@@ -27,8 +27,25 @@ in
     isHidden = false;
     shell = pkgs.zsh;
   };
+  
+  users.users.joseph = {
+    name = "joseph";
+    home = "/Users/joseph";
+    isHidden = false;
+    shell = pkgs.zsh;
+  };
+
+
 
   system.stateVersion = 6;
+
+  homebrew = {
+    enable = true;
+    casks = pkgs.callPackage ./casks.nix {};
+    onActivation = {
+      upgrade = true;
+    };
+  };
 
   home-manager = {
     extraSpecialArgs = { inherit inputs outputs; };
@@ -36,6 +53,11 @@ in
       # Import your home-manager configuration
       ${user} = import ../../users/pavel/home.nix;
     };
+    users = {
+      # Import your home-manager configuration
+      joseph = import ../../users/joseph/home.nix;
+    };
+
   };
 
 }

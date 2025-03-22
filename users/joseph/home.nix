@@ -1,10 +1,9 @@
-
 {config, home, pkgs, lib, ... }:
 
 {
   nixpkgs.config.allowUnfree = true;
 
-  home.username = "pavel";
+  home.username = "joseph";
 
   home.stateVersion = "25.05";
 
@@ -14,17 +13,14 @@
     ../../modules/common
     ./modules
   ];
-  
+
   programs.git = {
-    userName  = "pavel";
-    userEmail = "tiddiebiter@gmail.com";
+    userName  = "joseph";
+    userEmail = "pz@parking24.online";
   };
 
-
-  programs.zsh.shellAliases = {
-    nixos-switch = "sudo nixos-rebuild switch --flake ~/.nix";
-    darwin-switch = "darwin-rebuild switch --flake ~/.nix";
-  };
+  programs.go.enable = true;
+  programs.bun.enable = true;
 
   home.sessionVariables = {
     EDITOR = "nvim";

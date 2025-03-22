@@ -18,8 +18,8 @@
     shellAliases = {
       ls = "eza";
       ll = "eza --icons=always -al";
-      os-rebuild = "sudo nixos-rebuild switch --flake";
       update = "home-manager switch";
+      nix-dev = "nix develop -c $SHELL";
     };
     history.size = 10000;
     initExtra = ''

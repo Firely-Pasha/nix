@@ -1,0 +1,27 @@
+_:
+
+[
+  "arc"
+  "iina"
+  "google-chrome"
+  # "raycast"
+  "qbittorrent"
+  "sf-symbols"
+  "telegram"
+  "postman"
+  "anydesk"
+  "balenaetcher"
+  "vlc"
+  "diffusionbee"
+  "figma"
+  "firefox"
+  "godot"
+  "obsidian"
+  "openmtp"
+  "orbstack"
+  "steam"
+  "tableplus"
+  "utm"
+  "yandex-music"
+  "visual-studio-code"
+]
