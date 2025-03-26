@@ -24,4 +24,5 @@ _:
   "utm"
   "yandex-music"
   "visual-studio-code"
+  "cursor"
 ]

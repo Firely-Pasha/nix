@@ -19,9 +19,6 @@
     userEmail = "pz@parking24.online";
   };
 
-  programs.go.enable = true;
-  programs.bun.enable = true;
-
   home.sessionVariables = {
     EDITOR = "nvim";
   };

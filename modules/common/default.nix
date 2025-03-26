@@ -1,7 +1,10 @@
 [
   ./eza
   ./git
+  ./kotlin
   ./nvim
+  ./rust
   ./tmux
   ./zsh
+  ./other.nix
 ]

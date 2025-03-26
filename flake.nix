@@ -24,9 +24,17 @@
       url = "github:homebrew/homebrew-cask";
       flake = false;
     }; 
+    macos-cross-toolchains = {
+      url = "github:messense/homebrew-macos-cross-toolchains";
+      flake = false;
+    }; 
+    rust-overlay = {
+      url = "github:oxalica/rust-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, home-manager, nix-homebrew, homebrew-bundle, homebrew-core, homebrew-cask, nix-darwin, nixpkgs, ... }@inputs: 
+  outputs = { self, nixpkgs, nix-darwin, home-manager, nix-homebrew, homebrew-bundle, homebrew-core, homebrew-cask, macos-cross-toolchains, rust-overlay, ... }@inputs: 
     let
       user = "pavel";
       inherit (self) outputs;
@@ -56,6 +64,7 @@
                 "homebrew/homebrew-core" = homebrew-core;
                 "homebrew/homebrew-cask" = homebrew-cask;
                 "homebrew/homebrew-bundle" = homebrew-bundle;
+                "messense/homebrew-macos-cross-toolchains" = macos-cross-toolchains;
               };
               mutableTaps = false;
               autoMigrate = true;

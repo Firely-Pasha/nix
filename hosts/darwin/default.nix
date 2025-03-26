@@ -1,4 +1,4 @@
-{ config, home-manager, pkgs, nixpkgs, inputs, outputs, ... }:
+{ config, home-manager, pkgs, nixpkgs, inputs, outputs, rust-overlay, ... }:
 let
   user = "pavel";
 in
@@ -35,12 +35,11 @@ in
     shell = pkgs.zsh;
   };
 
-
-
   system.stateVersion = 6;
 
   homebrew = {
     enable = true;
+    brews = pkgs.callPackage ./brews.nix {};
     casks = pkgs.callPackage ./casks.nix {};
     onActivation = {
       upgrade = true;
@@ -50,14 +49,9 @@ in
   home-manager = {
     extraSpecialArgs = { inherit inputs outputs; };
     users = {
-      # Import your home-manager configuration
       ${user} = import ../../users/pavel/home.nix;
-    };
-    users = {
-      # Import your home-manager configuration
       joseph = import ../../users/joseph/home.nix;
     };
-
   };
 
 }

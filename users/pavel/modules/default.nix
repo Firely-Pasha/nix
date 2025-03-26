@@ -1,3 +1,5 @@
 [
+  ./rust
   ./zsh
+  ./other.nix
 ]

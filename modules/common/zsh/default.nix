@@ -25,6 +25,8 @@
     initExtra = ''
       eval "$(oh-my-posh init zsh --config ~/.config/ohmyposh/base.toml)"
 
+      export PATH="$PATH:/opt/homebrew/Cellar/binutils/2.44/bin"
+
       findandkill() {  
         ports=$(lsof -n -i4TCP:$1 | grep LISTEN | awk '{print $2}')  
         echo "$ports"

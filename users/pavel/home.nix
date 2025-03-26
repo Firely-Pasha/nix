@@ -1,14 +1,20 @@
 
-{config, home, pkgs, lib, ... }:
+{config, home, pkgs, lib, inputs, ... }:
 
 {
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs = {
+    config.allowUnfree = true;
+    overlays = [ 
+      inputs.rust-overlay.overlays.default 
+    ];
+  };
 
   home.username = "pavel";
 
   home.stateVersion = "25.05";
 
-  home.packages = [];
+  home.packages = with pkgs; [
+  ];
 
   imports = builtins.concatMap import [
     ../../modules/common
