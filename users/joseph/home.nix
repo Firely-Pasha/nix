@@ -4,6 +4,7 @@
   nixpkgs.config.allowUnfree = true;
 
   home.username = "joseph";
+  home.homeDirectory = "/home/joseph";
 
   home.stateVersion = "25.05";
 
@@ -18,6 +19,7 @@
     userName  = "joseph";
     userEmail = "pz@parking24.online";
   };
+
 
   home.sessionVariables = {
     EDITOR = "nvim";

@@ -84,9 +84,10 @@
         ];
       };
     };
-    # homeConfigurations."pavel@nixos" = home-manager.lib.homeManagerConfiguration {
-    #   modules = [./users/vincent/home.nix];
-    #   extraSpecialArgs = {inherit inputs outputs;};
-    # };
+    homeConfigurations."joseph" = home-manager.lib.homeManagerConfiguration {
+      pkgs = nixpkgs.legacyPackages.x86_64-linux;
+      modules = [./users/joseph/home.nix];
+      extraSpecialArgs = {inherit inputs outputs;};
+    };
   };
 }
