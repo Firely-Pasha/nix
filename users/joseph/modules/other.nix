@@ -5,5 +5,7 @@
     go
     pnpm
     bun
+    ruby
+    ruby.gems.nokogiri
   ];
 }

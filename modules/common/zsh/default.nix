@@ -35,6 +35,10 @@
         done
       }
       alias killport=findandkill
+
+      if [[ "$TERM_PROGRAM" == "ghostty" ]]; then
+          export TERM=xterm-256color
+      fi
     '';
   };
   programs.oh-my-posh = {

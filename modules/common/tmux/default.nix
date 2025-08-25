@@ -42,13 +42,13 @@
       set -agF status-right "#{@catppuccin_status_host}"
       set -agF status-right "#{E:@catppuccin_status_date_time}"
 
-      set -g @resurrect-capture-pane-contents 'on'
-      set -g @continuum-restore 'on'
+      # set -g @resurrect-capture-pane-contents 'on'
+      # set -g @continuum-restore 'on'
     '';
 
     plugins = with pkgs; [
-      tmuxPlugins.resurrect
-      tmuxPlugins.continuum
+      # tmuxPlugins.resurrect
+      # tmuxPlugins.continuum
       tmuxPlugins.vim-tmux-navigator
       {
         plugin = tmuxPlugins.catppuccin;

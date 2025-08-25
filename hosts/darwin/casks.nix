@@ -25,4 +25,8 @@ _:
   "yandex-music"
   "visual-studio-code"
   "cursor"
+  "iconizer"
+  "ghostty"
+  "bruno"
+  "discord"
 ]

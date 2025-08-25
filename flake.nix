@@ -5,6 +5,7 @@
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
     nix-darwin.url = "github:LnL7/nix-darwin";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
+    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -38,6 +39,9 @@
     let
       user = "pavel";
       inherit (self) outputs;
+      overlays = [
+        inputs.neovim-nightly-overlay.overlays.default
+      ];
     in
   {
     nixosConfigurations = {
@@ -46,6 +50,9 @@
         specialArgs = {inherit inputs outputs;};
         modules = [
           ./hosts/nixos/configuration.nix
+          {
+            nixpkgs.overlays = overlays;
+          }
         ];
       };
     };
@@ -71,6 +78,9 @@
             };
           }
           ./hosts/darwin
+          {
+            nixpkgs.overlays = overlays;
+          }
         ];
       };
     };

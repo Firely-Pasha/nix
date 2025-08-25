@@ -6,5 +6,10 @@
     nodejs
     bun
     lazygit
+    act
+    go-migrate
+    tmuxinator
+    gitlab-runner
+    gitlab-ci-local
   ];
 }
