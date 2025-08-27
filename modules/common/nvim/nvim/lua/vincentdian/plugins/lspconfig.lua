@@ -157,17 +157,14 @@ return {
 		-- end
 		local ls = {
 			"clangd",
-			"goimports",
-			"golines",
 			"gopls",
-			"kotlin_language_server",
-			"ktfmt",
 			"lua_ls",
 			"pylsp",
 			"rust_analyzer",
 			"svelte",
 			"tailwindcss",
 			"ts_ls",
+			"kotlin_lsp",
 		}
 		mason.setup()
 		mason_lspconfig.setup({
@@ -179,17 +176,7 @@ return {
 				capabilities = capabilities,
 			})
 		end
-		vim.lsp.config("kotlin_language_server", {
-			settings = {
-				kotlin = {
-					compiler = {
-						jvm = {
-							target = "11",
-						},
-					},
-				},
-			},
-		})
+		lsp_config["kotlin_language_server"].setup({})
 
 		-- mason_lspcofig.setup_handlers({
 		-- 	function(server_name) -- default handler (optional)
