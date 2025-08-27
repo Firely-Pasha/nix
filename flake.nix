@@ -86,7 +86,10 @@
     };
     homeConfigurations."joseph" = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.x86_64-linux;
-      modules = [./users/joseph/home.nix];
+      modules = [
+        ./users/joseph/home.nix
+        ./users/joseph/home.linux.nix
+      ];
       extraSpecialArgs = {inherit inputs outputs;};
     };
   };
