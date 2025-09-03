@@ -89,60 +89,6 @@ return {
 				keymap.set("n", "<leader>su", ":TypescriptRemoveUnused<CR>", opts) -- remove unused variables (not in youtube nvim video)
 			end
 		end
-		--
-		-- lsp_config.gopls.setup({
-		-- 	on_attach = on_attach,
-		-- 	capabilities = capabilities,
-		-- 	cmd = { "gopls", "serve" },
-		-- 	filetypes = { "go", "go.mod" },
-		-- 	root_dir = util.root_pattern("go.work", "go.mod", ".git"),
-		-- 	settings = {
-		-- 		gopls = {
-		-- 			analyses = {
-		-- 				unusedparams = true,
-		-- 				shadow = true,
-		-- 			},
-		-- 			staticcheck = true,
-		-- 		},
-		-- 	},
-		-- })
-		-- lsp_config.lua_ls.setup({
-		-- 	on_attach = on_attach,
-		-- 	capabilities = capabilities,
-		-- })
-		-- lsp_config.ts_ls.setup({
-		-- 	on_attach = on_attach,
-		-- 	capabilities = capabilities,
-		-- })
-		-- lsp_config.tailwindcss.setup({
-		-- 	on_attach = on_attach,
-		-- 	capabilities = capabilities,
-		-- })
-		-- lsp_config.svelte.setup({
-		-- 	on_attach = on_attach,
-		-- 	capabilities = capabilities,
-		-- })
-		-- lsp_config.rust_analyzer.setup({
-		-- 	on_attach = on_attach,
-		-- 	capabilities = capabilities,
-		-- })
-		-- lsp_config.pylsp.setup({
-		-- 	on_attach = on_attach,
-		-- 	capabilities = capabilities,
-		-- })
-		-- lsp_config.kotlin_language_server.setup({
-		-- 	on_attach = on_attach,
-		-- 	capabilities = capabilities,
-		-- 	settings = {
-		-- 		kotlin = {
-		-- 			compiler = {
-		-- 				jvm = {
-		-- 					target = "11",
-		-- 				},
-		-- 			},
-		-- 		},
-		-- 	},
-		-- })
 		flutter_tools.setup({
 			lsp = {
 				on_attach = on_attach,
@@ -170,24 +116,16 @@ return {
 		mason_lspconfig.setup({
 			ensure_installed = ls,
 		})
-		for _, value in ipairs(ls) do
-			vim.lsp.config(value, {
-				on_attach = on_attach,
-				capabilities = capabilities,
-			})
-		end
-		lsp_config["kotlin_language_server"].setup({})
-
-		-- mason_lspcofig.setup_handlers({
-		-- 	function(server_name) -- default handler (optional)
-		-- 		require("lspconfig")[server_name].setup({
-		-- 			on_attach = on_attach,
-		-- 			capabilities = capabilities,
-		-- 		})
-		-- 	end,
-		-- 	["rust_analyzer"] = function()
-		-- 		require("rust-tools").setup({})
-		-- 	end,
-		-- })
+		mason_lspconfig.setup_handlers({
+			function(server_name) -- default handler (optional)
+				require("lspconfig")[server_name].setup({
+					on_attach = on_attach,
+					capabilities = capabilities,
+				})
+			end,
+			-- ["rust_analyzer"] = function()
+			-- 	require("rust-tools").setup({})
+			-- end,
+		})
 	end,
 }
