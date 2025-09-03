@@ -14,8 +14,6 @@ return {
 		"akinsho/flutter-tools.nvim",
 	},
 	init = function()
-		local lsp_config = require("lspconfig")
-		local util = require("lspconfig/util")
 		local mason = require("mason")
 		local mason_lspconfig = require("mason-lspconfig")
 		local cmp = require("cmp")
@@ -95,12 +93,6 @@ return {
 				capabilities = capabilities,
 			},
 		})
-		-- if vim.fn.has("macunix") == 1 then
-		-- 	lsp_config.sourcekit.setup({
-		-- 		on_attach = on_attach,
-		-- 		capabilities = capabilities,
-		-- 	})
-		-- end
 		local ls = {
 			"clangd",
 			"gopls",
@@ -110,22 +102,30 @@ return {
 			"svelte",
 			"tailwindcss",
 			"ts_ls",
-			"kotlin_lsp",
 		}
 		mason.setup()
 		mason_lspconfig.setup({
 			ensure_installed = ls,
 		})
-		mason_lspconfig.setup_handlers({
-			function(server_name) -- default handler (optional)
-				require("lspconfig")[server_name].setup({
+		if mason_lspconfig.setup_handlers ~= nil then
+			mason_lspconfig.setup_handlers({
+				function(server_name) -- default handler (optional)
+					require("lspconfig")[server_name].setup({
+						on_attach = on_attach,
+						capabilities = capabilities,
+					})
+				end,
+				-- ["rust_analyzer"] = function()
+				-- 	require("rust-tools").setup({})
+				-- end,
+			})
+		else
+			for _, value in ipairs(ls) do
+				vim.lsp.config(value, {
 					on_attach = on_attach,
 					capabilities = capabilities,
 				})
-			end,
-			-- ["rust_analyzer"] = function()
-			-- 	require("rust-tools").setup({})
-			-- end,
-		})
+			end
+		end
 	end,
 }
