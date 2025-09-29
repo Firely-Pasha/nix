@@ -88,7 +88,17 @@
       pkgs = nixpkgs.legacyPackages.x86_64-linux;
       modules = [
         ./users/joseph/home.nix
+        ./users/common.linux.nix
         ./users/joseph/home.linux.nix
+      ];
+      extraSpecialArgs = {inherit inputs outputs;};
+    };
+    homeConfigurations."pavel@linux" = home-manager.lib.homeManagerConfiguration {
+      pkgs = nixpkgs.legacyPackages.x86_64-linux;
+      modules = [
+        ./users/common.linux.nix
+        ./users/pavel/home.linux.nix
+        ./users/pavel/home.nix
       ];
       extraSpecialArgs = {inherit inputs outputs;};
     };
