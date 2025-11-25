@@ -10,9 +10,7 @@
   };
 
   home.username = "pavel";
-
   home.stateVersion = "25.05";
-
   home.packages = with pkgs; [
   ];
 
@@ -22,10 +20,9 @@
   ];
   
   programs.git = {
-    userName  = "pavel";
-    userEmail = "tiddiebiter@gmail.com";
+    settings.user.name = "pavel";
+    settings.user.email = "tiddiebiter@gmail.com";
   };
-
 
   programs.zsh.shellAliases = {
     nixos-switch = "sudo nixos-rebuild switch --flake ~/.nix";
@@ -34,6 +31,7 @@
 
   home.sessionVariables = {
     EDITOR = "nvim";
+    ZSH_DISABLE_COMPFIX = "true";
   };
 
   programs.home-manager.enable = true;
