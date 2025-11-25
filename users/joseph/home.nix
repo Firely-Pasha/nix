@@ -4,9 +4,7 @@
   nixpkgs.config.allowUnfree = true;
 
   home.username = "joseph";
-
   home.stateVersion = "25.05";
-
   home.packages = [];
 
   imports = builtins.concatMap import [
@@ -15,13 +13,8 @@
   ];
 
   programs.git = {
-    userName  = "joseph";
-    userEmail = "pz@parking24.online";
-  };
-
-
-  home.sessionVariables = {
-    EDITOR = "nvim";
+    settings.user.name = "joseph";
+    settings.user.email = "pz@parking24.online";
   };
 
   programs.home-manager.enable = true;

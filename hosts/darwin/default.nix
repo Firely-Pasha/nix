@@ -1,7 +1,4 @@
 { config, home-manager, pkgs, nixpkgs, inputs, outputs, rust-overlay, ... }:
-let
-  user = "pavel";
-in
 {
   nix = {
     enable = false;
@@ -21,20 +18,6 @@ in
 
   programs.zsh.enable = true;
 
-  users.users.${user} = {
-    name = "${user}";
-    home = "/Users/${user}";
-    isHidden = false;
-    shell = pkgs.zsh;
-  };
-  
-  users.users.joseph = {
-    name = "joseph";
-    home = "/Users/joseph";
-    isHidden = false;
-    shell = pkgs.zsh;
-  };
-
   system.stateVersion = 6;
 
   homebrew = {
@@ -46,12 +29,9 @@ in
     };
   };
 
-  home-manager = {
-    extraSpecialArgs = { inherit inputs outputs; };
-    users = {
-      ${user} = import ../../users/pavel/home.nix;
-      joseph = import ../../users/joseph/home.nix;
-    };
-  };
+  imports = builtins.concatMap import [
+    ./user.pavel.nix
+    ./user.joseph.nix
+  ];
 
 }

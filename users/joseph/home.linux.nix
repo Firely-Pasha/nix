@@ -2,14 +2,6 @@
 
 {
   home.packages = with pkgs; [
-    ghostty
-    kitty
     flutter
   ];
-  home.shellAliases = {
-    "home-switch" = "home-manager --flake ~/.nix --extra-experimental-features 'nix-command flakes' switch";
-    "hs" = "home-switch";
-    "home-edit" = "cd ~/.nix && nvim . && cd - > /dev/null";
-    "he" = "home-edit";
-  };
 }
