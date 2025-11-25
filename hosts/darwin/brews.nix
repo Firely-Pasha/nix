@@ -20,4 +20,5 @@ _:
   "protoc-gen-go-grpc"
 
   "xcode-build-server"
+  "libusb"
 ]

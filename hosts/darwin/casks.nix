@@ -29,4 +29,5 @@ _:
   "ghostty"
   "bruno"
   "discord"
+  "openvpn-connect"
 ]
