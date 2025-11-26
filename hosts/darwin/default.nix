@@ -19,6 +19,7 @@
   programs.zsh.enable = true;
 
   system.stateVersion = 6;
+  system.primaryUser = "pavel";
 
   homebrew = {
     enable = true;
@@ -29,7 +30,7 @@
     };
   };
 
-  imports = builtins.concatMap import [
+  imports = [
     ./user.pavel.nix
     ./user.joseph.nix
   ];

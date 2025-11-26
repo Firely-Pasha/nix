@@ -1,5 +1,5 @@
 { config, home-manager, pkgs, nixpkgs, inputs, outputs, rust-overlay, ... }:
-let
+let 
   user = "pavel";
 in
 {
@@ -13,11 +13,7 @@ in
   home-manager = {
     extraSpecialArgs = { inherit inputs outputs; };
     users = {
-      ${user} = import [
-        ../../users/${user}/home.nix
-        ../../users/${user}/home.darwin.nix
-      ];
+      ${user} = import ../../users/${user}/home.darwin.nix;
     };
   };
-
 }

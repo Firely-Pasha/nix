@@ -1,5 +1,5 @@
 { config, home-manager, pkgs, nixpkgs, inputs, outputs, rust-overlay, ... }:
-let
+let 
   user = "joseph";
 in
 {
