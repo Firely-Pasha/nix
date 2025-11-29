@@ -24,11 +24,6 @@
     settings.user.email = "tiddiebiter@gmail.com";
   };
 
-  programs.zsh.shellAliases = {
-    nixos-switch = "sudo nixos-rebuild switch --flake ~/.nix";
-    darwin-switch = "darwin-rebuild switch --flake ~/.nix";
-  };
-
   home.sessionVariables = {
     EDITOR = "nvim";
     ZSH_DISABLE_COMPFIX = "true";
