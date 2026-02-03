@@ -6,6 +6,9 @@
     nerd-fonts.ubuntu-mono
     nerd-fonts.jetbrains-mono
     temurin-bin
+    gcc
+    zip
+    unzip
   ];
   home.shellAliases = {
     "hs" = "home-switch";

@@ -24,6 +24,9 @@ return {
 						["<C-<>"] = actions.cycle_history_prev,
 					},
 				},
+				preview = {
+					treesitter = false,
+				},
 			},
 		})
 		vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
