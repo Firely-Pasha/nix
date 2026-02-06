@@ -11,7 +11,7 @@
     unzip
   ];
   home.shellAliases = {
-    "home-switch" = "home-manager --flake ~/.nix#pavel@linux --extra-experimental-features 'nix-command flakes' switch";
+    "home-switch" = "home-manager --flake ~/.nix#${config.home.username}@linux --extra-experimental-features 'nix-command flakes' switch";
     "hs" = "home-switch";
     "home-edit" = "cd ~/.nix && nvim . && cd - > /dev/null";
     "he" = "home-edit";

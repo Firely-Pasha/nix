@@ -84,7 +84,7 @@
         ];
       };
     };
-    homeConfigurations."joseph" = home-manager.lib.homeManagerConfiguration {
+    homeConfigurations."joseph@linux" = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.x86_64-linux;
       modules = [
         ./users/joseph/home.nix

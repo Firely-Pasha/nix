@@ -3,6 +3,7 @@
   ./git
   ./kotlin
   ./nvim
+  ./python
   ./rust
   ./tmux
   ./zsh
