@@ -3,7 +3,7 @@
 {
   home.packages = with pkgs; [
     ripgrep
-    nodejs
+    nodejs_24
     bun
     lazygit
     act
@@ -11,5 +11,7 @@
     tmuxinator
     gitlab-runner
     gitlab-ci-local
+    tree-sitter
+    openapi-generator-cli
   ];
 }
