@@ -7,7 +7,7 @@ return {
 		end
 		lualine.setup({
 			options = {
-				theme = "catppuccin",
+				theme = "catppuccin-mocha",
 			},
 			sections = {
 				lualine_a = { "mode" },
