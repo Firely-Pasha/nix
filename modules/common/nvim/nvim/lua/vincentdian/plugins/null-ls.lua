@@ -38,9 +38,10 @@ return {
 					},
 					extra_filetypes = { "svelte" },
 				}), -- js/ts formatter
-				formatting.stylua, -- lua formatter
-				formatting.goimports, -- go formatter
-				formatting.golines, -- go formatter
+				formatting.stylua,
+				formatting.goimports,
+				formatting.golines,
+				formatting.dart_format,
 			},
 			-- configure format on save
 			on_attach = function(client, bufnr)
@@ -68,10 +69,11 @@ return {
 		mason_null_ls.setup({
 			-- list of formatters & linters for mason to install
 			ensure_installed = {
-				"stylua", -- lua formatter
+				"stylua",
 				"goimports",
 				"golines",
 				"prettier",
+				"dart_format",
 			},
 			-- auto-install configured formatters & linters (with null-ls)
 			automatic_installation = true,

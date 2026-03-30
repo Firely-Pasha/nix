@@ -102,6 +102,7 @@ return {
 			"svelte",
 			"tailwindcss",
 			"ts_ls",
+			"kotlin_lsp",
 		}
 		mason.setup()
 		mason_lspconfig.setup({
