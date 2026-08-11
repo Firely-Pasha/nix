@@ -14,6 +14,9 @@
     # };
   };
 
+  documentation.enable = false;
+  system.tools.darwin-uninstaller.enable = false;
+
   nixpkgs.hostPlatform = "aarch64-darwin";
 
   programs.zsh.enable = true;

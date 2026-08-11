@@ -1,7 +1,6 @@
 _:
 
 [
-  "arc"
   "iina"
   "google-chrome"
   # "raycast"

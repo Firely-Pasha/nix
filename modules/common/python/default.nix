@@ -5,7 +5,7 @@
     (python3.withPackages (p: (with p; [
       pip
       python-lsp-server
-      python-lsp-ruff
+      # python-lsp-ruff
     ])))
   ];
 }
