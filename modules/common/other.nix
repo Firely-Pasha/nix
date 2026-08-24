@@ -13,5 +13,6 @@
     gitlab-ci-local
     tree-sitter
     openapi-generator-cli
+    opencode
   ];
 }

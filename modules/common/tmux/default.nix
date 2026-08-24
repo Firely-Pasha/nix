@@ -73,6 +73,7 @@
           set -g status-left '#{E:@catppuccin_status_session} '
         '';
       }
+      tmuxPlugins.tmux-floax
     ];
   };
 }
