@@ -14,5 +14,6 @@
     tree-sitter
     openapi-generator-cli
     opencode
+    github-copilot-cli
   ];
 }
